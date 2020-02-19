@@ -25,4 +25,11 @@ public class UserValidation {
         }
         return "Invalid";
     }
+    public static String validateEightCharacterPassword(String password) {
+        String passwordRuleOnePattern = "^[a-zA-Z]{8,}";
+        if (password.matches(passwordRuleOnePattern)) {
+            return "Valid";
+        }
+        return "Invalid";
+    }
 }

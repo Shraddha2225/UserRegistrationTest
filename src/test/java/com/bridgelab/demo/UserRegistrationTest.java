@@ -52,4 +52,16 @@ public class UserRegistrationTest {
         String result=userValidation.validateMobileNumber("916576576");
         Assert.assertEquals("Invalid",result);
     }
+    @Test
+    public void givenPasswordStartWithEightCharacter_WhenProper_ShouldReturnValid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validateEightCharacterPassword("Workaholic");
+        Assert.assertEquals("Valid",result);
+    }
+    @Test
+    public void givenPasswordStartWithEightCharacter_WhenInproper_ShouldReturnInvalid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validateEightCharacterPassword("workaholic3452");
+        Assert.assertEquals("Invalid",result);
+    }
 }
