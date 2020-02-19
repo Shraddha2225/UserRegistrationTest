@@ -40,4 +40,16 @@ public class UserRegistrationTest {
         String result=userValidation.validateEmail("abc@%*.com");
         Assert.assertEquals("Invalid",result);
     }
+    @Test
+    public void givenMobileNumber_WhenProper_ShouldReturnValid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validateMobileNumber("91 8776655434");
+        Assert.assertEquals("Valid",result);
+    }
+    @Test
+    public void givenMobileNumber_WhenInproper_ShouldReturnInvalid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validateMobileNumber("916576576");
+        Assert.assertEquals("Invalid",result);
+    }
 }

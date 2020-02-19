@@ -18,4 +18,11 @@ public class UserValidation {
         }
         return "Invalid";
     }
+    public static String validateMobileNumber(String mobilenumber) {
+        String mobileNumberPattern = "^[1-9]{1,3}[ ][0-9]{10}$";
+        if (mobilenumber.matches(mobileNumberPattern)) {
+            return "Valid";
+        }
+        return "Invalid";
+    }
 }
