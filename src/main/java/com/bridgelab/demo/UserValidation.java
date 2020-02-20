@@ -32,4 +32,11 @@ public class UserValidation {
         }
         return "Invalid";
     }
+    public String validatePasswordWithAtLeastOneCapitalLetter(String password) {
+        String passwordRuleTwoPattern="^(?=.*[A-Z])[a-zA-Z]{8,}$";
+        if (password.matches(passwordRuleTwoPattern)) {
+            return "Valid";
+        }
+        return "Invalid";
+    }
 }

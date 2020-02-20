@@ -64,4 +64,16 @@ public class UserRegistrationTest {
         String result=userValidation.validateEightCharacterPassword("workaholic3452");
         Assert.assertEquals("Invalid",result);
     }
+    @Test
+    public void givenPasswordContainsAtLeastOneUppperCaseCharacter_WhenProper_ShouldReturnValid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validatePasswordWithAtLeastOneCapitalLetter("WorkAholic");
+        Assert.assertEquals("Valid",result);
+    }
+    @Test
+    public void givenPasswordContainsAtLeastOneUppperCaseCharacter_WhenInproper_ShouldReturnInvalid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validatePasswordWithAtLeastOneCapitalLetter("hackerwork");
+        Assert.assertEquals("Invalid",result);
+    }
 }
