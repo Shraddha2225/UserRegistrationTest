@@ -39,4 +39,11 @@ public class UserValidation {
         }
         return "Invalid";
     }
+    public static String validatePasswordWithAtLeastOneNumericNumber(String password) {
+        String passwordRuleThreePattern = "^(?=.*[A-Z])(?=.*[\\d])[a-zA-Z0-9]{8,}$";
+        if (password.matches(passwordRuleThreePattern)) {
+            return "Valid";
+        }
+        return "Invalid";
+    }
 }

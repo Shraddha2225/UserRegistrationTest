@@ -76,4 +76,16 @@ public class UserRegistrationTest {
         String result=userValidation.validatePasswordWithAtLeastOneCapitalLetter("hackerwork");
         Assert.assertEquals("Invalid",result);
     }
+    @Test
+    public void givenPasswordContainsAtLeastOneNumericCharacter_WhenProper_ShouldReturnValid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validatePasswordWithAtLeastOneNumericNumber("WorkAholic2341");
+        Assert.assertEquals("Valid",result);
+    }
+    @Test
+    public void givenPasswordContainsAtLeastOneNumericCharacter_WhenInproper_ShouldReturnInvalid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validatePasswordWithAtLeastOneNumericNumber("unboundcodes");
+        Assert.assertEquals("Invalid",result);
+    }
 }
