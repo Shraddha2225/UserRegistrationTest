@@ -46,4 +46,12 @@ public class UserValidation {
         }
         return "Invalid";
     }
+    public String validatePasswordWithAtLeastOneSpecialCharacter(String password) {
+        String passwordRuleFourPattern= "^((?=[^\\W]*[\\W][^\\W]*$))(?=.*[A-Z])(?=.*[\\d])(?=.*[a-z])[A-za-z0-9\\W].{8,}$";
+        if (password.matches(passwordRuleFourPattern))
+        {
+            return "Valid";
+        }
+        return "Invalid";
+    }
 }

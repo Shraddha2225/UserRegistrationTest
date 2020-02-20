@@ -88,4 +88,16 @@ public class UserRegistrationTest {
         String result=userValidation.validatePasswordWithAtLeastOneNumericNumber("unboundcodes");
         Assert.assertEquals("Invalid",result);
     }
+    @Test
+    public void givenPasswordContainsExactlyOneSpecialCharacter_WhenProper_ShouldReturnValid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validatePasswordWithAtLeastOneSpecialCharacter("@WorkAholic2341");
+        Assert.assertEquals("Valid",result);
+    }
+    @Test
+    public void givenPasswordContainsExactlyOneSpecialCharacter_WhenInproper_ShouldReturnInvalid() {
+        UserValidation userValidation = new UserValidation();
+        String result=userValidation.validatePasswordWithAtLeastOneSpecialCharacter("@#unboun@dcodes");
+        Assert.assertEquals("Invalid",result);
+    }
 }
